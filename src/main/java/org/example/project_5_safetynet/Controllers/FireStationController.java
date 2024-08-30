@@ -26,7 +26,6 @@ public class FireStationController {
 
     @GetMapping("/flood")
     public ResponseEntity<List<Map<String, Object>>> stations(@RequestParam("stations") String stations_numbers_list) {
-        System.out.println("input GET = " + stations_numbers_list);
         return ResponseEntity.ok(FireStationService.getAllHouseholdsFromStationsList(stations_numbers_list));
     }
 

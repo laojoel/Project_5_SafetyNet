@@ -269,6 +269,33 @@
             "zip": "11000",
             "phone": "000-000-1111",
             "email": "masterSega@genesis.com"
+        },
+        {
+            "firstName": "Jake",
+            "lastName": "Ram",
+            "address": "1 addrPack",
+            "city": "buss",
+            "zip": "11000",
+            "phone": "000-000-1111",
+            "email": "jr@mail.org"
+        },
+        {
+            "firstName": "Lucie",
+            "lastName": "Ramen",
+            "address": "2 addrPack",
+            "city": "buss",
+            "zip": "11000",
+            "phone": "000-000-1111",
+            "email": "lr@mail.org"
+        },
+        {
+            "firstName": "Estelle",
+            "lastName": "Cash",
+            "address": "3 addrPack",
+            "city": "buss",
+            "zip": "11000",
+            "phone": "000-000-1111",
+            "email": "ec@mail.com"
         }
     ],
     "firestations": [
@@ -335,6 +362,26 @@
         {
             "address": "2 phone St",
             "station": "20"
+        },
+        {
+            "address": "Intel Rd.",
+            "station": "92"
+        },
+        {
+            "address": "Ctrl Modif Rd.",
+            "station": "91"
+        },
+        {
+            "address": "1 addrPack",
+            "station": "128"
+        },
+        {
+            "address": "2 addrPack",
+            "station": "128"
+        },
+        {
+            "address": "3 addrPack",
+            "station": "129"
         }
     ],
     "medicalrecords": [
@@ -540,9 +587,27 @@
             "allergies": []
         },
         {
-            "firstName": "Eric",
-            "lastName": "Cadigan",
-            "birthdate": "08/06/1945",
+            "firstName": "Jake",
+            "lastName": "Ram",
+            "birthdate": "08/06/1980",
+            "medications": [
+                "tradoxidine:400mg"
+            ],
+            "allergies": []
+        },
+        {
+            "firstName": "Lucie",
+            "lastName": "Ramen",
+            "birthdate": "08/06/2021",
+            "medications": [
+                "tradoxidine:400mg"
+            ],
+            "allergies": []
+        },
+        {
+            "firstName": "Estelle",
+            "lastName": "Cash",
+            "birthdate": "08/06/2021",
             "medications": [
                 "tradoxidine:400mg"
             ],

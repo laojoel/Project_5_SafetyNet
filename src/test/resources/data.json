@@ -224,6 +224,30 @@
     "phone" : "555-000-5555",
     "email" : "anotherEmail@super.com"
   }, {
+    "firstName" : "Jake",
+    "lastName" : "Ram",
+    "address" : "1 addrPack",
+    "city" : "buss",
+    "zip" : "11000",
+    "phone" : "000-000-1111",
+    "email" : "jr@mail.org"
+  }, {
+    "firstName" : "Lucie",
+    "lastName" : "Ramen",
+    "address" : "2 addrPack",
+    "city" : "buss",
+    "zip" : "11000",
+    "phone" : "000-000-1111",
+    "email" : "lr@mail.org"
+  }, {
+    "firstName" : "Estelle",
+    "lastName" : "Cash",
+    "address" : "3 addrPack",
+    "city" : "buss",
+    "zip" : "11000",
+    "phone" : "000-000-1111",
+    "email" : "ec@mail.com"
+  }, {
     "firstName" : "Jane",
     "lastName" : "Doe",
     "address" : "2025 Moon base",
@@ -280,11 +304,26 @@
     "address" : "2 phone St",
     "station" : "20"
   }, {
-    "address" : "32 bits st",
-    "station" : "6"
+    "address" : "Ctrl Modif Rd.",
+    "station" : "91"
+  }, {
+    "address" : "1 addrPack",
+    "station" : "128"
+  }, {
+    "address" : "2 addrPack",
+    "station" : "128"
+  }, {
+    "address" : "3 addrPack",
+    "station" : "129"
   }, {
     "address" : "2001 Washington View",
     "station" : "911"
+  }, {
+    "address" : "32 bits st",
+    "station" : "6"
+  }, {
+    "address" : "Radeon Rd.",
+    "station" : "64"
   } ],
   "medicalrecords" : [ {
     "firstName" : "John",
@@ -455,21 +494,29 @@
     "fullName" : "Clive Ferguson",
     "age" : 39
   }, {
-    "firstName" : "Eric",
-    "lastName" : "Cadigan",
-    "birthdate" : "08/06/1945",
+    "firstName" : "Jake",
+    "lastName" : "Ram",
+    "birthdate" : "08/06/1980",
     "medications" : [ "tradoxidine:400mg" ],
     "allergies" : [ ],
-    "fullName" : "Eric Cadigan",
-    "age" : 79
+    "fullName" : "Jake Ram",
+    "age" : 44
   }, {
-    "firstName" : "Jane",
-    "lastName" : "Doe",
-    "birthdate" : "01/01/1972",
-    "medications" : [ "Lisinopril: 100mg", "Atorvastatin: 50mg" ],
-    "allergies" : [ "histamine", "latex" ],
-    "fullName" : "Jane Doe",
-    "age" : 52
+    "firstName" : "Lucie",
+    "lastName" : "Ramen",
+    "birthdate" : "08/06/2021",
+    "medications" : [ "tradoxidine:400mg" ],
+    "allergies" : [ ],
+    "fullName" : "Lucie Ramen",
+    "age" : 3
+  }, {
+    "firstName" : "Estelle",
+    "lastName" : "Cash",
+    "birthdate" : "08/06/2021",
+    "medications" : [ "tradoxidine:400mg" ],
+    "allergies" : [ ],
+    "fullName" : "Estelle Cash",
+    "age" : 3
   }, {
     "firstName" : "Kate",
     "lastName" : "Swift",
@@ -478,5 +525,13 @@
     "allergies" : [ "allergyA", "allergyB", "allergyC" ],
     "fullName" : "Kate Swift",
     "age" : 23
+  }, {
+    "firstName" : "Jane",
+    "lastName" : "Doe",
+    "birthdate" : "01/01/1972",
+    "medications" : [ "Lisinopril: 100mg", "Atorvastatin: 50mg" ],
+    "allergies" : [ "histamine", "latex" ],
+    "fullName" : "Jane Doe",
+    "age" : 52
   } ]
 }

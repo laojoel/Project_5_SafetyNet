@@ -1,6 +1,7 @@
 package org.example.project_5_safetynet.Services;
 
 import org.example.project_5_safetynet.DAO.DataDAO;
+import org.example.project_5_safetynet.Models.Child;
 import org.example.project_5_safetynet.Models.FireStation;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.*;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -29,9 +31,9 @@ public class FireStationServiceTest {
 
     @Test
     void getAllPersonsCoveredByStationTest() {
-        Map<String, Object> result = FireStationService.getAllPersonsCoveredByStation("2");
+        Map<String, Object> result = FireStationService.getAllPersonsCoveredByStation("128");
         assertNotNull(result);
-        assertThat(result.get("adults count")).isEqualTo(4);
+        assertThat(result.get("adults count")).isEqualTo(1);
         assertThat(result.get("children count")).isEqualTo(1);
         assertNotNull(result.get("persons"));
     }
