@@ -1,6 +1,5 @@
 package org.example.project_5_safetynet.Models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 

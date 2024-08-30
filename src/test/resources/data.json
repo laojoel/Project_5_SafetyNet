@@ -224,6 +224,14 @@
     "phone" : "555-000-5555",
     "email" : "anotherEmail@super.com"
   }, {
+    "firstName" : "Updated",
+    "lastName" : "CtrlResident",
+    "address" : "omega st",
+    "city" : "processed",
+    "zip" : "11000",
+    "phone" : "555-000-5555",
+    "email" : "anotherEmail@super.com"
+  }, {
     "firstName" : "Jake",
     "lastName" : "Ram",
     "address" : "1 addrPack",
@@ -247,6 +255,14 @@
     "zip" : "11000",
     "phone" : "000-000-1111",
     "email" : "ec@mail.com"
+  }, {
+    "firstName" : "Create",
+    "lastName" : "CtrlSummon",
+    "address" : "Strong Rd.",
+    "city" : "Titan",
+    "zip" : null,
+    "phone" : "123-222-3333",
+    "email" : "newComer@ctrl.net"
   }, {
     "firstName" : "Jane",
     "lastName" : "Doe",
@@ -517,6 +533,22 @@
     "allergies" : [ ],
     "fullName" : "Estelle Cash",
     "age" : 3
+  }, {
+    "firstName" : "Modifier",
+    "lastName" : "CtrTester",
+    "birthdate" : "01/11/1991",
+    "medications" : [ "new:1mg", "new:2mg" ],
+    "allergies" : [ "allergy1" ],
+    "fullName" : "Modifier CtrTester",
+    "age" : 33
+  }, {
+    "firstName" : "Controller",
+    "lastName" : "TestPost",
+    "birthdate" : "01/02/2003",
+    "medications" : [ "medicA:1mg", "medicB:1mg" ],
+    "allergies" : [ "allergyA", "allergyB", "allergyC" ],
+    "fullName" : "Controller TestPost",
+    "age" : 21
   }, {
     "firstName" : "Kate",
     "lastName" : "Swift",

@@ -2,7 +2,6 @@ package org.example.project_5_safetynet.Models;
 
 import lombok.Getter;
 import lombok.Setter;
-
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;

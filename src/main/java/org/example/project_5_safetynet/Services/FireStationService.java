@@ -6,7 +6,6 @@ import org.example.project_5_safetynet.Models.Person;
 import org.example.project_5_safetynet.Models.PersonBasicInfo;
 import org.example.project_5_safetynet.Models.PersonMedical;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Stream;

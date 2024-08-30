@@ -3,7 +3,6 @@ package org.example.project_5_safetynet.Models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.List;
 
 @Data

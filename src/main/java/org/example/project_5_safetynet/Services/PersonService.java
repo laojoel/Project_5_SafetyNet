@@ -3,7 +3,6 @@ package org.example.project_5_safetynet.Services;
 import org.example.project_5_safetynet.DAO.DataDAO;
 import org.example.project_5_safetynet.Models.*;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;

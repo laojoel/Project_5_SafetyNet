@@ -1,13 +1,10 @@
 package org.example.project_5_safetynet.Controllers;
 
-import org.example.project_5_safetynet.Models.FireStation;
 import org.example.project_5_safetynet.Models.MedicalRecord;
-import org.example.project_5_safetynet.Services.FireStationService;
 import org.example.project_5_safetynet.Services.MedicalRecordService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.io.IOException;
 
 @RestController

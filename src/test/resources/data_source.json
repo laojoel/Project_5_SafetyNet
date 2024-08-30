@@ -271,6 +271,24 @@
             "email": "masterSega@genesis.com"
         },
         {
+            "firstName": "Updated",
+            "lastName": "CtrlResident",
+            "address": "omega st",
+            "city": "processed",
+            "zip": "11000",
+            "phone": "000-000-1111",
+            "email": "xctrl@genesis.com"
+        },
+        {
+            "firstName": "Deleted",
+            "lastName": "CtrlResident",
+            "address": "alpha st",
+            "city": "processed",
+            "zip": "11000",
+            "phone": "000-000-1111",
+            "email": "zctrl@genesis.com"
+        },
+        {
             "firstName": "Jake",
             "lastName": "Ram",
             "address": "1 addrPack",
@@ -607,6 +625,24 @@
         {
             "firstName": "Estelle",
             "lastName": "Cash",
+            "birthdate": "08/06/2021",
+            "medications": [
+                "tradoxidine:400mg"
+            ],
+            "allergies": []
+        },
+        {
+            "firstName": "Modifier",
+            "lastName": "CtrTester",
+            "birthdate": "08/06/2021",
+            "medications": [
+                "tradoxidine:400mg"
+            ],
+            "allergies": []
+        },
+        {
+            "firstName": "Eraser",
+            "lastName": "CtrTester",
             "birthdate": "08/06/2021",
             "medications": [
                 "tradoxidine:400mg"
