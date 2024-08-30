@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import static org.example.project_5_safetynet.Project5SafetyNetApplication.logger;
 
 public class DataDAO {
     static Data data;
@@ -20,6 +21,9 @@ public class DataDAO {
         if (dataPath==null){
             dataPath = filePath;
             data = new ObjectMapper().readValue(new File(dataPath), Data.class);
+        }
+        else {
+            logger.info("# Critical | DataDAO | initWithFilePath | data json file not found");
         }
     }
 
@@ -125,10 +129,10 @@ public class DataDAO {
         return adults;
     }
 
-
     public static void createNewPerson(Person person) throws IOException {
         data.getPersons().add(person);
         writeDataToDisk();
+        logger.info("DataDAO | createNewPerson | Person with full name " + person.getFullName() + " created");
     }
     public static boolean updatePerson(Person person) throws IOException {
         Person recordedPerson = getPersonWithFullName(person.getFullName());
@@ -139,9 +143,11 @@ public class DataDAO {
             if (person.getAddress() != null) {recordedPerson.setAddress(person.getAddress());}
             if (person.getZip() != null) {recordedPerson.setZip(person.getZip());}
             writeDataToDisk();
+            logger.info("DataDAO | updatePerson | Person with full name " + person.getFullName() + " updated");
             return true;
         }
         else {
+            logger.error("DataDAO | updatePerson | Person with full name " + person.getFullName() + " not found");
             return false;
         }
     }
@@ -151,9 +157,11 @@ public class DataDAO {
         if (recordedPerson != null) {
             data.getPersons().remove(recordedPerson);
             writeDataToDisk();
+            logger.info("DataDAO | deletePerson | Person with full name " + person.getFullName() + " deleted");
             return true;
         }
         else {
+            logger.error("DataDAO | deletePerson | Person with full name " + person.getFullName() + " not found");
             return false;
         }
     }
@@ -167,9 +175,11 @@ public class DataDAO {
         if (recordedFireStation != null) {
             if (fireStation.getStation() != null) {recordedFireStation.setStation(fireStation.getStation());}
             writeDataToDisk();
+            logger.info("DataDAO | updateFireStation | FireStation address " + fireStation.getAddress() + "updated");
             return true;
         }
         else {
+            logger.error("DataDAO | updateFireStation | FireStation address " + fireStation.getAddress() + " not found");
             return false;
         }
     }
@@ -179,9 +189,11 @@ public class DataDAO {
             data.getFirestations().removeIf(fireStation -> fireStation.address.equals(recordedFireStation.getAddress())
                     && fireStation.getStation().equals(recordedFireStation.getStation()));
             writeDataToDisk();
+            logger.info("DataDAO | deleteFireStation | FireStation address " + lookup.getAddress() + " deleted");
             return true;
         }
         else {
+            logger.error("DataDAO | deleteFireStation | FireStation address " + lookup.getAddress() + " not found");
             return false;
         }
     }
@@ -197,9 +209,11 @@ public class DataDAO {
             if (medicalRecord.getMedications() != null) {recordedMedicalRecord.setMedications(medicalRecord.getMedications());}
             if (medicalRecord.getAllergies() != null) {recordedMedicalRecord.setAllergies(medicalRecord.getAllergies());}
             writeDataToDisk();
+            logger.info("DataDAO | updateMedicalRecord | Full name " + medicalRecord.getFullName() + " Updated");
             return true;
         }
         else {
+            logger.error("DataDAO | updateMedicalRecord | Full name " + medicalRecord.getFullName() + " not found");
             return false;
         }
     }
@@ -208,9 +222,11 @@ public class DataDAO {
         if (recordedMedicalRecord != null) {
             data.getMedicalrecords().remove(recordedMedicalRecord);
             writeDataToDisk();
+            logger.info("DataDAO | deleteMedicalRecord | Full name " + medicalRecord.getFullName() + " deleted");
             return true;
         }
         else {
+            logger.error("DataDAO | deleteMedicalRecord | Full name " + medicalRecord.getFullName() + " not found");
             return false;
         }
     }

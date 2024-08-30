@@ -56,6 +56,18 @@ public class PersonControllerTest {
     }
 
     @Test
+    void Put_PersonNotFoundTest() throws IOException {
+        Person person = new Person();
+        person.setFirstName("Sega");
+        person.setLastName("Genesis");
+        PersonService.updatePerson(person);
+
+        ResponseEntity<String> response = personController.Put_Person(person);
+
+        assertThat(response.getStatusCode().value()).isEqualTo(404);
+    }
+
+    @Test
     void Delete_PersonTest() throws IOException {
         Person person = DataDAO.getPersonWithFullName("Deleted CtrlResident");
 
@@ -63,5 +75,16 @@ public class PersonControllerTest {
 
         assertThat(response.getStatusCode().value()).isEqualTo(200);
         assertThat(response.getBody()).isEqualTo("Person: Deleted CtrlResident Successfully Deleted");
+    }
+
+    @Test
+    void Delete_PersonNotFoundTest() throws IOException {
+        Person person = new Person();
+        person.setFirstName("Sega");
+        person.setLastName("Genesis");
+
+        ResponseEntity<String> response = personController.Delete_Person(person);
+
+        assertThat(response.getStatusCode().value()).isEqualTo(404);
     }
 }

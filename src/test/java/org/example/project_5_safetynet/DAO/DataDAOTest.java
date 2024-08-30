@@ -28,7 +28,7 @@ class DataDAOTest {
     }
 
     @Test
-    void readDataFromDiskTest() throws IOException {
+    void readDataFromDiskTest() {
         assertNotNull(DataDAO.getPersons());
         assertNotNull(DataDAO.getFireStations());
         assertNotNull(DataDAO.getMedicalRecords());
@@ -222,6 +222,14 @@ class DataDAOTest {
     }
 
     @Test
+    void updatePersonNotFoundTest() throws IOException {
+        Person person = new Person();
+        person.setFirstName("Sega");
+        person.setLastName("Genesis");
+        assertThat(DataDAO.updatePerson(person)).isEqualTo(false);
+    }
+
+    @Test
     void deletePersonTest() throws IOException {
         String fullName = "Delete Test";
         Person person = DataDAO.getPersonWithFullName(fullName);
@@ -230,6 +238,14 @@ class DataDAOTest {
 
         Person result = DataDAO.getPersonWithFullName(fullName);
         assertThat(result).isNull();
+    }
+
+    @Test
+    void deletePersonNotFoundTest() throws IOException {
+        Person person = new Person();
+        person.setFirstName("Sega");
+        person.setLastName("Genesis");
+        assertThat(DataDAO.deletePerson(person)).isEqualTo(false);
     }
 
     @Test
@@ -261,6 +277,14 @@ class DataDAOTest {
     }
 
     @Test
+    void updateFireStationNotFoundTest() throws IOException {
+        FireStation fireStation = new FireStation();
+        fireStation.setAddress("Sega");
+        fireStation.setStation("1990");
+        assertThat(DataDAO.updateFireStation(fireStation)).isEqualTo(false);
+    }
+
+    @Test
     void deleteFireStationTest() throws IOException {
         String address = "1 Delete Test St";
         FireStation fireStation = DataDAO.getFireStationFromAddress(address);
@@ -269,6 +293,14 @@ class DataDAOTest {
 
         FireStation result = DataDAO.getFireStationFromAddress(address);
         assertThat(result).isNull();
+    }
+
+    @Test
+    void deleteFireStationNotFoundTest() throws IOException {
+        FireStation fireStation = new FireStation();
+        fireStation.setAddress("Sega");
+        fireStation.setStation("1990");
+        assertThat(DataDAO.deleteFireStation(fireStation)).isEqualTo(false);
     }
 
     @Test
@@ -317,6 +349,14 @@ class DataDAOTest {
     }
 
     @Test
+    void updateMedicalRecordNotFoundTest() throws IOException {
+        MedicalRecord medicalRecord = new MedicalRecord();
+        medicalRecord.setFirstName("Sega");
+        medicalRecord.setLastName("Genesis");
+        assertThat(DataDAO.updateMedicalRecord(medicalRecord)).isEqualTo(false);
+    }
+
+    @Test
     void deleteMedicalRecordTest() throws IOException {
         String fullName = "Delete Test";
         MedicalRecord medicalRecord = DataDAO.getMedicalRecordWithFullName(fullName);
@@ -325,6 +365,14 @@ class DataDAOTest {
 
         MedicalRecord result = DataDAO.getMedicalRecordWithFullName(fullName);
         assertThat(result).isNull();
+    }
+
+    @Test
+    void deleteMedicalRecordNotFoundTest() throws IOException {
+        MedicalRecord medicalRecord = new MedicalRecord();
+        medicalRecord.setFirstName("Sega");
+        medicalRecord.setLastName("Genesis");
+        assertThat(DataDAO.deleteMedicalRecord(medicalRecord)).isEqualTo(false);
     }
 
 

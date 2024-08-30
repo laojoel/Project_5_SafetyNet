@@ -57,6 +57,17 @@ public class MedicalRecordControllerTest {
     }
 
     @Test
+    void Put_MedicalRecordNotFoundTest() throws IOException {
+        MedicalRecord medicalRecord = new MedicalRecord();
+        medicalRecord.setFirstName("Sega");
+        medicalRecord.setLastName("Genesis");
+
+        ResponseEntity<String> response = medicalRecordController.Put_MedicalRecord(medicalRecord);
+
+        assertThat(response.getStatusCode().value()).isEqualTo(404);
+    }
+
+    @Test
     void Delete_MedicalRecordTest() throws IOException {
         MedicalRecord medicalRecord = new MedicalRecord();
         medicalRecord.setFirstName("Eraser");
@@ -66,5 +77,16 @@ public class MedicalRecordControllerTest {
 
         assertThat(response.getStatusCode().value()).isEqualTo(200);
         assertThat(response.getBody()).isEqualTo("MedicalRecord Successfully Deleted");
+    }
+
+    @Test
+    void Delete_MedicalRecordNotFoundTest() throws IOException {
+        MedicalRecord medicalRecord = new MedicalRecord();
+        medicalRecord.setFirstName("Sega");
+        medicalRecord.setLastName("Genesis");
+
+        ResponseEntity<String> response = medicalRecordController.Delete_MedicalRecord(medicalRecord);
+
+        assertThat(response.getStatusCode().value()).isEqualTo(404);
     }
 }

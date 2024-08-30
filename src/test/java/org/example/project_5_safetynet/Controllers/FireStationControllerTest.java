@@ -55,7 +55,6 @@ public class FireStationControllerTest {
         assertThat(response.getBody().toString()).contains("1 addrPack");
         assertThat(response.getBody().toString()).contains("2 addrPack");
         assertThat(response.getBody().toString()).contains("3 addrPack");
-
     }
 
     @Test
@@ -72,26 +71,48 @@ public class FireStationControllerTest {
 
     @Test
     void Put_FireStationTest() throws IOException {
-        FireStation newFiresStation = new FireStation();
-        newFiresStation.setStation("91");
-        newFiresStation.setAddress("Ctrl Modif Rd.");
+        FireStation FiresStation = new FireStation();
+        FiresStation.setStation("91");
+        FiresStation.setAddress("Ctrl Modif Rd.");
 
-        ResponseEntity<String> response = fireStationController.Put_FireStation(newFiresStation);
+        ResponseEntity<String> response = fireStationController.Put_FireStation(FiresStation);
 
         assertThat(response.getStatusCode().value()).isEqualTo(200);
         assertThat(response.getBody()).isEqualTo("FireStation Mapping Successfully updated");
     }
 
     @Test
-    void Delete_FireStationTest() throws IOException {
-        FireStation newFiresStation = new FireStation();
-        newFiresStation.setStation("92");
-        newFiresStation.setAddress("Intel Rd.");
+    void Put_FireStationNotFoundTest() throws IOException {
+        FireStation FiresStation = new FireStation();
+        FiresStation.setStation("888");
+        FiresStation.setAddress("Saturn Rd.");
 
-        ResponseEntity<String> response = fireStationController.Delete_FireStation(newFiresStation);
+        ResponseEntity<String> response = fireStationController.Put_FireStation(FiresStation);
+
+        assertThat(response.getStatusCode().value()).isEqualTo(404);
+    }
+
+    @Test
+    void Delete_FireStationTest() throws IOException {
+        FireStation FiresStation = new FireStation();
+        FiresStation.setStation("92");
+        FiresStation.setAddress("Intel Rd.");
+
+        ResponseEntity<String> response = fireStationController.Delete_FireStation(FiresStation);
 
         assertThat(response.getStatusCode().value()).isEqualTo(200);
         assertThat(response.getBody()).isEqualTo("FireStation Mapping Successfully Deleted");
+    }
+
+    @Test
+    void Delete_FireStationNotFoundTest() throws IOException {
+        FireStation FiresStation = new FireStation();
+        FiresStation.setStation("888");
+        FiresStation.setAddress("Saturn Rd.");
+
+        ResponseEntity<String> response = fireStationController.Delete_FireStation(FiresStation);
+
+        assertThat(response.getStatusCode().value()).isEqualTo(404);
     }
 
 }
