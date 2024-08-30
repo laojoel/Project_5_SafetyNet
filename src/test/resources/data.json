@@ -332,14 +332,14 @@
     "address" : "3 addrPack",
     "station" : "129"
   }, {
-    "address" : "2001 Washington View",
-    "station" : "911"
+    "address" : "Radeon Rd.",
+    "station" : "64"
   }, {
     "address" : "32 bits st",
     "station" : "6"
   }, {
-    "address" : "Radeon Rd.",
-    "station" : "64"
+    "address" : "2001 Washington View",
+    "station" : "911"
   } ],
   "medicalrecords" : [ {
     "firstName" : "John",
@@ -550,14 +550,6 @@
     "fullName" : "Controller TestPost",
     "age" : 21
   }, {
-    "firstName" : "Kate",
-    "lastName" : "Swift",
-    "birthdate" : "01/02/2001",
-    "medications" : [ "medicA:1mg", "medicB:1mg" ],
-    "allergies" : [ "allergyA", "allergyB", "allergyC" ],
-    "fullName" : "Kate Swift",
-    "age" : 23
-  }, {
     "firstName" : "Jane",
     "lastName" : "Doe",
     "birthdate" : "01/01/1972",
@@ -565,5 +557,13 @@
     "allergies" : [ "histamine", "latex" ],
     "fullName" : "Jane Doe",
     "age" : 52
+  }, {
+    "firstName" : "Kate",
+    "lastName" : "Swift",
+    "birthdate" : "01/02/2001",
+    "medications" : [ "medicA:1mg", "medicB:1mg" ],
+    "allergies" : [ "allergyA", "allergyB", "allergyC" ],
+    "fullName" : "Kate Swift",
+    "age" : 23
   } ]
 }

@@ -34,7 +34,7 @@ public class PersonServiceTest {
     void getChildrenAtAddressTest() {
         Map<String, Object> result = PersonService.getChildrenAtAddress("947 E. Rose Dr");
         List<Child> children = ((Stream<Child>)result.get("children")).collect(Collectors.toList());
-        List<String> adults = (List<String>) result.get("other residents");
+        List<String> adults = (List<String>)result.get("other residents");
 
         assertThat(children.getFirst().getFirstName()).isEqualTo("Kendrik");
         assertThat(children.getFirst().getLastName()).isEqualTo("Stelzer");
