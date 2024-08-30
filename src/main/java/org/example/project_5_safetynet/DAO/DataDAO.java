@@ -114,11 +114,11 @@ public class DataDAO {
         List<Person> persons = getAllPersonsFromAddress(address);
         List<Person> adults = new ArrayList<>();
         MedicalRecord medicalRecord;
-        for (int i=0; i<persons.size();i++) {
-            medicalRecord = getMedicalRecordForPerson(persons.get(i));
+        for (Person person : persons) {
+            medicalRecord = getMedicalRecordForPerson(person);
             if (medicalRecord != null) {
-                if (getMedicalRecordForPerson(persons.get(i)).getAge() >= 18) {
-                    adults.add(persons.get(i));
+                if (getMedicalRecordForPerson(person).getAge() >= 18) {
+                    adults.add(person);
                 }
             }
         }

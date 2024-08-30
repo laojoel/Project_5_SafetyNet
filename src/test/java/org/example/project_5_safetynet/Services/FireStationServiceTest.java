@@ -1,19 +1,16 @@
 package org.example.project_5_safetynet.Services;
 
 import org.example.project_5_safetynet.DAO.DataDAO;
-import org.example.project_5_safetynet.Models.Child;
 import org.example.project_5_safetynet.Models.FireStation;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.*;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -68,7 +65,7 @@ public class FireStationServiceTest {
         List<FireStation> results = DataDAO.getFireStationsFromStationNumber("911");
 
         assertNotNull(results);
-        assertThat(results.get(0).getAddress()).isEqualTo("2001 Washington View");
+        assertThat(results.getFirst().getAddress()).isEqualTo("2001 Washington View");
     }
 
     @Test

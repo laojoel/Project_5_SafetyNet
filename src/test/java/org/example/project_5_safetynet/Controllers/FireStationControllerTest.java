@@ -51,7 +51,7 @@ public class FireStationControllerTest {
         ResponseEntity<List<Map<String, Object>>> response = fireStationController.stations("128,129");
 
         assertThat(response.getStatusCode().value()).isEqualTo(200);
-        assertThat(response.getBody().size()).isEqualTo(2);
+        assertThat(Objects.requireNonNull(response.getBody()).size()).isEqualTo(2);
         assertThat(response.getBody().toString()).contains("1 addrPack");
         assertThat(response.getBody().toString()).contains("2 addrPack");
         assertThat(response.getBody().toString()).contains("3 addrPack");

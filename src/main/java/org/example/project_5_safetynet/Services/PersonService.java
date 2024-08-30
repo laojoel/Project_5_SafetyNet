@@ -22,7 +22,6 @@ public class PersonService {
     }
 
     public static Map<String, Object> getPersonsMedicalsAndFireStationNumberAtAddress(String address) {
-        List<Person> persons = DataDAO.getAllPersonsFromAddress(address);
         Map<String, Object> map = new HashMap<>();
         map.put("stationNumber",DataDAO.getFireStationFromAddress(address).station);
         map.put("persons", DataDAO.getAllPersonsFromAddress(address).stream()

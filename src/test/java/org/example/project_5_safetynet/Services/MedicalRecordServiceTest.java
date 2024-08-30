@@ -1,14 +1,11 @@
 package org.example.project_5_safetynet.Services;
 
 import org.example.project_5_safetynet.DAO.DataDAO;
-import org.example.project_5_safetynet.Models.FireStation;
 import org.example.project_5_safetynet.Models.MedicalRecord;
-import org.example.project_5_safetynet.Models.Person;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -55,7 +52,7 @@ public class MedicalRecordServiceTest {
         MedicalRecord medicalRecord = DataDAO.getMedicalRecordWithFullName("Shawna Stelzer");
         medicalRecord.setBirthdate("01/11/1991");
         medicalRecord.setMedications(Arrays.asList("new:1mg", "new:2mg"));
-        medicalRecord.setAllergies(Arrays.asList("allergy1"));
+        medicalRecord.setAllergies(List.of("allergy1"));
 
         MedicalRecordService.updateMedicalRecord(medicalRecord);
 
@@ -63,7 +60,7 @@ public class MedicalRecordServiceTest {
         assertThat(result.getBirthdate()).isEqualTo("01/11/1991");
         assertThat(result.getMedications().get(0)).isEqualTo("new:1mg");
         assertThat(result.getMedications().get(1)).isEqualTo("new:2mg");
-        assertThat(result.getAllergies().get(0)).isEqualTo("allergy1");
+        assertThat(result.getAllergies().getFirst()).isEqualTo("allergy1");
     }
 
     @Test

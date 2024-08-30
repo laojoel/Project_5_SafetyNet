@@ -9,7 +9,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -37,9 +36,9 @@ public class PersonServiceTest {
         List<Child> children = ((Stream<Child>)result.get("children")).collect(Collectors.toList());
         List<String> adults = (List<String>) result.get("other residents");
 
-        assertThat(children.get(0).getFirstName()).isEqualTo("Kendrik");
-        assertThat(children.get(0).getLastName()).isEqualTo("Stelzer");
-        assertThat(adults.get(0)).isEqualTo("Brian Stelzer");
+        assertThat(children.getFirst().getFirstName()).isEqualTo("Kendrik");
+        assertThat(children.getFirst().getLastName()).isEqualTo("Stelzer");
+        assertThat(adults.getFirst()).isEqualTo("Brian Stelzer");
     }
 
     @Test
@@ -49,12 +48,12 @@ public class PersonServiceTest {
         List<PersonMedical> personMedicals = ((Stream<PersonMedical>)result.get("persons")).toList();
 
         assertThat(stationNumber).isEqualTo("1");
-        assertThat(personMedicals.get(0).getFirstName()).isEqualTo("Reginold");
-        assertThat(personMedicals.get(0).getMedications()).isEqualTo(Arrays.asList("thradox:700mg"));
-        assertThat(personMedicals.get(0).getAllergies()).isEqualTo(Arrays.asList("illisoxian"));
+        assertThat(personMedicals.getFirst().getFirstName()).isEqualTo("Reginold");
+        assertThat(personMedicals.getFirst().getMedications()).isEqualTo(List.of("thradox:700mg"));
+        assertThat(personMedicals.getFirst().getAllergies()).isEqualTo(List.of("illisoxian"));
         assertThat(personMedicals.get(1).getFirstName()).isEqualTo("Jamie");
-        assertThat(personMedicals.get(1).getMedications()).isEqualTo(Arrays.asList());
-        assertThat(personMedicals.get(1).getAllergies()).isEqualTo(Arrays.asList());
+        assertThat(personMedicals.get(1).getMedications()).isEqualTo(List.of());
+        assertThat(personMedicals.get(1).getAllergies()).isEqualTo(List.of());
     }
 
     @Test
@@ -62,15 +61,15 @@ public class PersonServiceTest {
         List<PersonInfo> result = PersonService.getPersonInformationFromLastName("Cooper");
 
         assertThat(result.size()).isEqualTo(2);
-        assertThat(result.get(0).getLastName()).isEqualTo("Cooper");
-        assertThat(result.get(0).getAddress()).isEqualTo("112 Steppes Pl");
-        assertThat(result.get(0).getMedications()).isEqualTo(Arrays.asList("hydrapermazol:300mg","dodoxadin:30mg"));
-        assertThat(result.get(0).getAllergies()).isEqualTo(Arrays.asList("shellfish"));
+        assertThat(result.getFirst().getLastName()).isEqualTo("Cooper");
+        assertThat(result.getFirst().getAddress()).isEqualTo("112 Steppes Pl");
+        assertThat(result.getFirst().getMedications()).isEqualTo(Arrays.asList("hydrapermazol:300mg","dodoxadin:30mg"));
+        assertThat(result.getFirst().getAllergies()).isEqualTo(List.of("shellfish"));
 
         assertThat(result.get(1).getLastName()).isEqualTo("Cooper");
         assertThat(result.get(1).getAddress()).isEqualTo("489 Manchester St");
-        assertThat(result.get(1).getMedications()).isEqualTo(Arrays.asList());
-        assertThat(result.get(1).getAllergies()).isEqualTo(Arrays.asList());
+        assertThat(result.get(1).getMedications()).isEqualTo(List.of());
+        assertThat(result.get(1).getAllergies()).isEqualTo(List.of());
     }
 
     @Test
@@ -78,7 +77,7 @@ public class PersonServiceTest {
         List<String> result = PersonService.getCommunityEmails("Tatooine");
 
         assertThat(result.size()).isEqualTo(2);
-        assertThat(result.get(0)).isEqualTo("jedi@starwars.net");
+        assertThat(result.getFirst()).isEqualTo("jedi@starwars.net");
         assertThat(result.get(1)).isEqualTo("master@starwars.net");
     }
 

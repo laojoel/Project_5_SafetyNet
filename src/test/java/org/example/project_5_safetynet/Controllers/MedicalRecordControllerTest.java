@@ -1,20 +1,18 @@
 package org.example.project_5_safetynet.Controllers;
 
 import org.example.project_5_safetynet.DAO.DataDAO;
-import org.example.project_5_safetynet.Models.FireStation;
 import org.example.project_5_safetynet.Models.MedicalRecord;
-import org.example.project_5_safetynet.Services.MedicalRecordService;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.ResponseEntity;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -50,7 +48,7 @@ public class MedicalRecordControllerTest {
         MedicalRecord medicalRecord = DataDAO.getMedicalRecordWithFullName("Modifier CtrTester");
         medicalRecord.setBirthdate("01/11/1991");
         medicalRecord.setMedications(Arrays.asList("new:1mg", "new:2mg"));
-        medicalRecord.setAllergies(Arrays.asList("allergy1"));
+        medicalRecord.setAllergies(List.of("allergy1"));
 
         ResponseEntity<String> response = medicalRecordController.Put_MedicalRecord(medicalRecord);
 
